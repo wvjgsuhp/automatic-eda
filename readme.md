@@ -2,6 +2,17 @@
 
 This project aims to automate the creation of generic figures for simple EDA.
 
+## Table of Contents
+
+<!-- vim-markdown-toc GFM -->
+
+- [Prerequisite](#prerequisite)
+- [Dependencies](#dependencies)
+- [Usage](#usage)
+- [External Data](#external-data)
+
+<!-- vim-markdown-toc -->
+
 ## Prerequisite
 
 1. Python 3.10
