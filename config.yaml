@@ -1,0 +1,63 @@
+source:
+  data:
+    customers:
+      location: datasets/sm_customers.csv
+      filetype: csv
+    orders:
+      location: datasets/sm_orders.csv
+      filetype: csv
+    payments:
+      location: datasets/sm_payments.csv
+      filetype: csv
+    items:
+      location: datasets/sm_items.csv
+      filetype: csv
+  filetype:
+    csv:
+      kwargs:
+        sep: ','
+output:
+  figure:
+    location: out/figures/
+  log:
+    location: logs/
+  other:
+    location: out/
+eda:
+  customers:
+    simple:
+      stats:
+  orders:
+    simple:
+      stats:
+  payments:
+    simple:
+      histogram:
+        payment_installments:
+          bins: 50
+        payment_value:
+          bins: 50
+      stats:
+  items:
+    extra_columns:
+      - name: price_over_freight
+        method: divide
+        columns:
+          - price
+          - freight_value
+      - name: total_price
+        method: sum
+        columns:
+          - price
+          - freight_value
+    simple:
+      histogram:
+        price:
+          bins: 50
+        freight_value:
+          bins: 50
+        price_over_freight:
+          bins: 50
+        total_price:
+          bins: 50
+      stats:
